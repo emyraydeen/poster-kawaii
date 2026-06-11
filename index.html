@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poster Sekolah Kawaii — Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">🎨</span>
+        <div>
+          <div class="logo-title">Poster Kawaii Generator</div>
+          <div class="logo-sub">idea asal: taskaummiaidin.com</div>
+        </div>
+      </div>
+      <a href="https://github.com" class="github-btn" id="github-link" target="_blank">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero">
+      <h1>Jana Poster Kawaii<br><span class="hero-accent">dalam beberapa minit</span></h1>
+      <p class="hero-desc">Isi borang → Salin JSON → Minta Claude hasilkan prompt → Jana di Gemini</p>
+      <div class="steps-mini">
+        <div class="step-mini"><span>1</span>Isi borang</div>
+        <div class="arrow-mini">→</div>
+        <div class="step-mini"><span>2</span>Jana JSON</div>
+        <div class="arrow-mini">→</div>
+        <div class="step-mini"><span>3</span>Bawa ke Claude</div>
+        <div class="arrow-mini">→</div>
+        <div class="step-mini"><span>4</span>Jana di Gemini</div>
+      </div>
+    </div>
+
+    <div class="form-container">
+
+      <!-- TAJUK -->
+      <section class="card">
+        <div class="card-header">
+          <div class="card-icon">✏️</div>
+          <div>
+            <div class="card-title">Tajuk Poster</div>
+            <div class="card-desc">Teks yang akan terpapar besar di bahagian atas poster</div>
+          </div>
+        </div>
+        <div class="fields">
+          <div class="field-row">
+            <div class="field">
+              <label>Baris 1 <span class="field-hint">teks kecil di atas</span></label>
+              <input type="text" id="b1" placeholder="contoh: JOM" value="JOM">
+            </div>
+            <div class="field">
+              <label>Baris 2 <span class="field-hint accent-hint">TOPIK UTAMA — warna terang</span></label>
+              <input type="text" id="b2" placeholder="contoh: SOLAT, KEBERSIHAN, DISIPLIN...">
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label>Baris 3 <span class="field-hint">lokasi / konteks</span></label>
+              <input type="text" id="b3" placeholder="contoh: DI SEKOLAH!, DI KANTIN!, DI RUMAH!">
+            </div>
+            <div class="field">
+              <label>Subjudul <span class="field-hint">sasaran audiens</span></label>
+              <input type="text" id="sub" placeholder="contoh: Panduan untuk kanak-kanak 5-6 tahun">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PANEL -->
+      <section class="card">
+        <div class="card-header">
+          <div class="card-icon">🖼️</div>
+          <div>
+            <div class="card-title">6 Panel Aktiviti</div>
+            <div class="card-desc">Setiap panel ada label (teks pada poster) dan situasi (untuk dilukis oleh AI)</div>
+          </div>
+        </div>
+        <div class="panel-grid">
+          <div class="panel-item" id="panel-1">
+            <div class="panel-num">Panel 1 <span>atas kiri</span></div>
+            <input type="text" id="p1l" placeholder="Label — contoh: Belajar solat bersama cikgu">
+            <textarea id="p1s" placeholder="Situasi — contoh: Kanak-kanak duduk atas sejadah bersama cikgu bertudung mengajar solat"></textarea>
+          </div>
+          <div class="panel-item" id="panel-2">
+            <div class="panel-num">Panel 2 <span>atas kanan</span></div>
+            <input type="text" id="p2l" placeholder="Label — contoh: Berdiri tegak Qiam">
+            <textarea id="p2s" placeholder="Situasi — contoh: Kanak-kanak lelaki berdiri tegak di atas sejadah dengan tangan bersedekap"></textarea>
+          </div>
+          <div class="panel-item" id="panel-3">
+            <div class="panel-num">Panel 3 <span>tengah kiri</span></div>
+            <input type="text" id="p3l" placeholder="Label">
+            <textarea id="p3s" placeholder="Situasi untuk ilustrasi..."></textarea>
+          </div>
+          <div class="panel-item" id="panel-4">
+            <div class="panel-num">Panel 4 <span>tengah kanan</span></div>
+            <input type="text" id="p4l" placeholder="Label">
+            <textarea id="p4s" placeholder="Situasi untuk ilustrasi..."></textarea>
+          </div>
+          <div class="panel-item" id="panel-5">
+            <div class="panel-num">Panel 5 <span>bawah kiri</span></div>
+            <input type="text" id="p5l" placeholder="Label">
+            <textarea id="p5s" placeholder="Situasi untuk ilustrasi..."></textarea>
+          </div>
+          <div class="panel-item" id="panel-6">
+            <div class="panel-num">Panel 6 <span>bawah kanan</span></div>
+            <input type="text" id="p6l" placeholder="Label">
+            <textarea id="p6s" placeholder="Situasi untuk ilustrasi..."></textarea>
+          </div>
+        </div>
+      </section>
+
+      <!-- TIPS & WATAK -->
+      <section class="card">
+        <div class="card-header">
+          <div class="card-icon">💡</div>
+          <div>
+            <div class="card-title">Tips & Watak</div>
+            <div class="card-desc">Bahagian bawah poster dan watak tengah</div>
+          </div>
+        </div>
+        <div class="fields">
+          <div class="field">
+            <label>Tajuk bahagian tips</label>
+            <input type="text" id="ttips" placeholder="contoh: Tips Solat Khusyuk">
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label>Tip 1</label>
+              <input type="text" id="t1" placeholder="contoh: Kosongkan fikiran">
+            </div>
+            <div class="field">
+              <label>Tip 2</label>
+              <input type="text" id="t2" placeholder="contoh: Fahami makna bacaan">
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label>Tip 3</label>
+              <input type="text" id="t3" placeholder="contoh: Merasa diperhatikan Allah">
+            </div>
+            <div class="field">
+              <label>Kredit / nama pembuat</label>
+              <input type="text" id="kredit" placeholder="contoh: CikguAsBM">
+            </div>
+          </div>
+          <div class="field">
+            <label>Penerangan watak tengah poster</label>
+            <input type="text" id="watak" placeholder="contoh: kanak-kanak perempuan bertudung dalam seragam sekolah, senyum ceria" value="kanak-kanak dalam seragam sekolah Malaysia, ekspresi ceria dan comel">
+          </div>
+        </div>
+      </section>
+
+      <!-- BUTANG JANA -->
+      <button class="generate-btn" onclick="generate()">
+        <span class="btn-icon">✨</span>
+        Jana Content JSON
+      </button>
+
+      <!-- HASIL -->
+      <div class="result-wrap" id="result-wrap">
+        <div class="result-header">
+          <div class="result-title">
+            <span>✅</span> Content JSON anda sudah siap!
+          </div>
+          <div class="result-actions">
+            <button class="copy-btn" onclick="copyJSON()" id="copy-btn">Salin JSON</button>
+            <button class="prompt-btn" onclick="copyPrompt()" id="prompt-btn">Salin Prompt Claude</button>
+          </div>
+        </div>
+
+        <div class="result-tabs">
+          <button class="rtab active" onclick="showTab('json', this)">JSON sahaja</button>
+          <button class="rtab" onclick="showTab('prompt', this)">Prompt untuk Claude</button>
+          <button class="rtab" onclick="showTab('cara', this)">Cara seterusnya</button>
+        </div>
+
+        <div id="tab-json" class="rtab-panel active">
+          <pre id="json-output"></pre>
+        </div>
+        <div id="tab-prompt" class="rtab-panel">
+          <pre id="prompt-output"></pre>
+        </div>
+        <div id="tab-cara" class="rtab-panel cara-panel">
+          <div class="cara-step">
+            <div class="cara-num">1</div>
+            <div>Klik <strong>"Salin Prompt Claude"</strong> di atas</div>
+          </div>
+          <div class="cara-step">
+            <div class="cara-num">2</div>
+            <div>Buka <a href="https://claude.ai" target="_blank">claude.ai</a> dan tampal prompt tersebut</div>
+          </div>
+          <div class="cara-step">
+            <div class="cara-num">3</div>
+            <div>Claude akan hasilkan prompt lengkap dalam Bahasa Inggeris untuk Gemini</div>
+          </div>
+          <div class="cara-step">
+            <div class="cara-num">4</div>
+            <div>Buka <a href="https://aitestkitchen.withgoogle.com/tools/image-fx" target="_blank">Google ImageFX</a> atau <a href="https://gemini.google.com" target="_blank">Gemini</a>, tampal prompt dan jana poster!</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div>Dibina dengan ❤️ untuk guru-guru Malaysia · Idea asal poster oleh <a href="https://www.taskaummiaidin.com" target="_blank" style="color:var(--accent2);font-weight:700;text-decoration:none;">Taska Ummi Aidin</a></div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
